@@ -1,26 +1,23 @@
-#include<stdio.h>
-  
+#include <stdio.h>
 int main()
 {
-    int a[20],i,x,n;
-    printf("How many elements?");
-    scanf("%d",&n);
-     
-    printf("Enter array elements:n");
-    for(i=0;i<n;++i)
-        scanf("%d",&a[i]);
-     
-    printf("nEnter element to search:");
-    scanf("%d",&x);
-     
-    for(i=0;i<n;++i)
-        if(a[i]==x)
+    int array[100], search, c, number;
+    printf("Enter the number of elements in array\n");
+    scanf("%d",&number);
+    printf("Enter %d numbers\n", number);
+    for ( c = 0 ; c < number ; c++ )
+        scanf("%d",&array[c]);
+    printf("Enter the number to search\n");
+    scanf("%d",&search);
+    for ( c = 0 ; c < number ; c++ )
+    {
+        if ( array[c] == search )   
+        {
+            printf("%d is present at location %d.\n", search, c+1);
             break;
-     
-    if(i<n)
-        printf("Element found at index %d",i);
-    else
-        printf("Element not found");
-  
+        }
+    }
+    if ( c == number )
+        printf("%d is not present in array.\n", search);
     return 0;
 }
